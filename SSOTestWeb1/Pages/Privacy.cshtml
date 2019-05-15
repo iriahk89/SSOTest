@@ -1,0 +1,24 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+@if (string.IsNullOrEmpty(Model.Token))
+{
+    <p>you are not Authorize to access this page. Please login</p>
+}
+else
+{
+    <p>Your Json Web Token (JWT) : @Model.Token</p>
+
+    if (Model.IsFromCache)
+    {
+        <p>Credential retrieve from API Cache</p>
+    }
+    else
+    {
+        <p>Credential retrieve from SQL Server DB</p>
+    }
+}

@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome @Model.Username</h1>
+
+        @if (string.IsNullOrEmpty(Model.Token))
+        {
+            <p>Please Login to access Privacy page</p>
+        }
+        else
+        {
+            <form method="post">
+                <input type="submit" value="Logout" />
+                @Html.AntiForgeryToken()
+            </form>
+        }
+    </div>

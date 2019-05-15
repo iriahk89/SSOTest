@@ -1,0 +1,24 @@
+﻿@page
+@model SSOTestWeb1.Pages.LoginModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <p>Login using form below:</p>
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        Username: <input asp-for="loginData.Username" value="" /><br />
+        Password: <input asp-for="loginData.Password" value="" /><br />
+        <input type="submit" value="Login" />
+        @Html.AntiForgeryToken()
+    </form>
+</body>
+</html>
