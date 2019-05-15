@@ -16,7 +16,7 @@ namespace SSOTestWeb1.Pages
     public class LoginModel : PageModel
     {
         [BindProperty] // Bind on Post
-        public LoginData loginData { get; set; }
+        public UserModel loginData { get; set; }
 
         public void OnGet()
         {
@@ -78,14 +78,5 @@ namespace SSOTestWeb1.Pages
 
             Response.Cookies.Append(key, value, option);
         }
-    }
-
-    public class LoginData
-    {
-        [Required]
-        public string Username { get; set; }
-
-        [Required, DataType(DataType.Password)]
-        public string Password { get; set; }
     }
 }

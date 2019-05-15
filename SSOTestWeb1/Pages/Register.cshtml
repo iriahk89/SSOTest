@@ -1,0 +1,16 @@
+﻿@page
+@model SSOTestWeb1.Pages.RegisterModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Register</h1>
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    Username: <input asp-for="user.Username" value="" /><br />
+    Password: <input asp-for="user.Password" value="" /><br />
+    <input type="submit" value="Register" />
+    @Html.AntiForgeryToken()
+</form>
+
